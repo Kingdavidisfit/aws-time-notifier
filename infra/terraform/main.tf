@@ -69,7 +69,7 @@ resource "aws_sns_topic_subscription" "email_sub" {
 #EventBridge Rule - scheduler
 resource "aws_cloudwatch_event_rule" "lambda_schedule" {
   name                = "time_notifier_schedule"
-  schedule_expression = "rate(5 minutes)" # change to 30mins to 1hr eventually
+  schedule_expression = "rate(3 hours)" # duration
 }
 
 resource "aws_cloudwatch_event_target" "lambda_target" {
